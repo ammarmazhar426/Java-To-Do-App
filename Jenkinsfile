@@ -4,11 +4,6 @@ pipeline {
         maven 'MyMaven'
     }
     stages {
-        stage('checkout') {
-            steps {
-                git 'https://github.com/ammarmazhar426/Java-To-Do-App.git'
-            }
-        }
         stage('Build') {
             steps {
                 sh 'mvn clean install'
