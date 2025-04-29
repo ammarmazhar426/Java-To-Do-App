@@ -15,7 +15,13 @@ pipeline {
             }
             steps {
                 withSonarQubeEnv('Sonar') {
-                    sh "${SONAR_SCANNER_HOME}/bin/sonar-scanner"
+                    sh """
+                    ${SONAR_SCANNER_HOME}/bin/sonar-scanner \
+                    -Dsonar.projectKey=todo-app \
+                    -Dsonar.projectName="Todo App" \
+                    -Dsonar.projectVersion=1.0 \
+                    -Dsonar.sources=.
+                    """
                 }
             }
         }
