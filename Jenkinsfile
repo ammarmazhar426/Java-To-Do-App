@@ -31,5 +31,13 @@ pipeline {
                 echo 'jarfile created successfully inside target/ folder'
             }
         }
+         stage('Docker Build & Run') {
+            steps{
+                script{
+                    sh 'docker build -t todo-app .'
+                    sh 'docker run -d -p 5050:5050 --name todo-conatiner todo-app'
+                }
+            }
+         }
     }
 }
