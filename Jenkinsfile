@@ -20,7 +20,7 @@ pipeline {
                     -Dsonar.projectKey=todo-app \
                     -Dsonar.projectName="Todo App" \
                     -Dsonar.projectVersion=1.0 \
-                    -Dsonar.sources=.
+                    -Dsonar.sources=. \
                     -Dsonar.java.binaries=target/classes
                     """
                 }
